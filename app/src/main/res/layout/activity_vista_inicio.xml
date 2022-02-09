@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".Vista.VistaInicio">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="@string/Bienvenido"
+                android:textAlignment="textEnd"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txvNombreVista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/open_sans_semibold"
+                android:maxLength="15"
+                android:text="LEONARDO"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cdPerfil"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:onClick="IrPerfil"
+            app:cardCornerRadius="50dp">
+
+            <ImageView
+                android:id="@+id/imgFotoPerfilVista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="IrPerfil"
+                app:srcCompat="@drawable/avatar" />
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cdInicio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="#f1f1f1"
+        app:cardCornerRadius="20dp"
+        app:contentPaddingTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <Button
+                android:id="@+id/btnIrSitioCercano"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="75dp"
+                android:backgroundTint="#c76363"
+                android:fontFamily="@font/open_sans_bold"
+                android:onClick="ListarHospedajeCercano"
+                android:text="@string/Cercano"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="60dp">
+
+                <LinearLayout
+                    android:id="@+id/lySitiosVista"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cdVistaHotel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginBottom="20dp"
+                        app:cardCornerRadius="25dp"
+                        app:contentPadding="5dp">
+
+                        <LinearLayout
+                            android:id="@+id/lyContenedorSitio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:orientation="horizontal">
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/cdPortadaHotel"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                app:cardCornerRadius="25dp">
+
+                                <ImageView
+                                    android:id="@+id/imgPortadaHotel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/hotelcisne" />
+                            </android.support.v7.widget.CardView>
+
+                            <LinearLayout
+                                android:id="@+id/lyContenedorInfo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txvNombreHotelCard"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:maxLength="50"
+                                    android:text="HOTEL EL CISNE"
+                                    android:textSize="20sp" />
+
+                                <TextView
+                                    android:id="@+id/txvIdHospedaje"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone" />
+
+                                <LinearLayout
+                                    android:id="@+id/lyPuntuacionVista"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <android.support.v7.widget.CardView
+                                        android:id="@+id/cdPuntuacion"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="5dp"
+                                        app:cardBackgroundColor="#b2666e"
+                                        app:cardCornerRadius="5dp">
+
+                                        <TextView
+                                            android:id="@+id/txvPuntuacionSitioVista"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="5dp"
+                                            android:fontFamily="@font/open_sans_condensed_bold"
+                                            android:text="0/0"
+                                            android:textColor="#ffffff"
+                                            android:textSize="15sp" />
+                                    </android.support.v7.widget.CardView>
+
+                                    <TextView
+                                        android:id="@+id/txvRecomendacionVista"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/open_sans_light"
+                                        android:gravity="center|left"
+                                        android:text="@string/TextoCalificacion" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/lyDistanciaVista"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/imgUbi"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="bottom"
+                                        app:srcCompat="@drawable/ic_baseline_location_on_24" />
+
+                                    <TextView
+                                        android:id="@+id/txvDist"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="5dp"
+                                        android:fontFamily="@font/open_sans_semibold"
+                                        android:gravity="bottom"
+                                        android:text="@string/Distancia" />
+
+                                    <TextView
+                                        android:id="@+id/txvDistanciaVista"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="bottom"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:gravity="bottom"
+                                        android:text="3.5 KM"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/btnInformacionSitioVista"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:layout_gravity="center"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_baseline_info_24" />
+
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cdbtnInicio"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="25dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/card_back_2"
+                    app:cardCornerRadius="50dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <ImageButton
+                        android:id="@+id/btnMenuInicio"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:onClick="menu"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/ic_baseline_blur_on_24" />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cdIrMiSitio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="100dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <Button
+                        android:id="@+id/btnMiSitio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1"
+                        android:backgroundTint="#c76363"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:onClick="irMiSitio"
+                        android:text="@string/MiSitio"
+                        android:textColor="#ffffff"
+                        android:textSize="15sp" />
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cdIrAdmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="200dp"
+                    android:layout_marginBottom="75dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <Button
+                        android:id="@+id/btnIrAdmin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:backgroundTint="#c76363"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:onClick="irMenuAdmin"
+                        android:text="@string/IrAdmins"
+                        android:textColor="#ffffff"
+                        android:textSize="15sp" />
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cdIrSitioHospedaje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="200dp"
+                    android:layout_marginBottom="75dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <Button
+                        android:id="@+id/btnIrRegistroSitio"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom"
+                        android:backgroundTint="#c76363"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:onClick="irMenuSitio"
+                        android:text="@string/IrSitio"
+                        android:textColor="#ffffff"
+                        android:textSize="15sp" />
+
+                </android.support.v7.widget.CardView>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="prueba"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btnLoginView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Login"
+        android:text="login" />
+
+    <Button
+        android:id="@+id/btnPrincipalView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Principal"
+        android:text="pantalla principal" />
+
+    <Button
+        android:id="@+id/btnMenuDesplegable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="menu Desplegable" />
+
+    <Button
+        android:id="@+id/btnSitioHospedajeMaestro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="HospedajeMaestro"
+        android:text="Sitio Hospedaje Maestro" />
+
+    <Button
+        android:id="@+id/btnListarHospedaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="ListarHospedaje"
+        android:text="Listar Hospedaje"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="288dp" />
+
+    <Button
+        android:id="@+id/btnListarTodosHospedajes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="ListarHospedajes"
+        android:text="listar todos hospedajes" />
+
+    <Button
+        android:id="@+id/btnRegistrarSitio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="HospedajeRegistrar"
+        android:text="REGISTRAR SITIO" />
+
+    <Button
+        android:id="@+id/btnEditarSitio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="HospedajeModificar"
+        android:text="EDITAR SITIO" />
+
+    <Button
+        android:id="@+id/btnListarUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="listarUsuario"
+        android:text="LISTAR USUARIO" />
+
+    <Button
+        android:id="@+id/btnRegistrarUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="registrarUsuario"
+        android:text="Registrar Usuario" />
+
+    <Button
+        android:id="@+id/btnModificarUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="modificarUsuario"
+        android:text="Modificar Usuario" />
+
+    <Button
+        android:id="@+id/btnConectar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Conectar"
+        android:text="Conectar" />
+
+</LinearLayout>

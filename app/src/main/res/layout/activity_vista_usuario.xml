@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".Vista.VistaUsuario">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardFotoPerfil"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imgFotoPerfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="false"
+                        android:cropToPadding="false"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/avatar" />
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardEditarFotoPerfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="50dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/cardFotoPerfil"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.93">
+
+                    <ImageButton
+                        android:id="@+id/btnEditarFotoUsuario"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="1dp"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:onClick="cargarImagen"
+                        app:srcCompat="@drawable/ic_baseline_edit_24"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                </android.support.v7.widget.CardView>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/lyCategoriaUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lyModificarCategoriaUsuario"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txvCategoriaUsuario"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="center|left"
+                            android:text="@string/Administrador"
+                            android:textColor="#000000"
+                            android:textSize="15sp"
+                            android:textStyle="normal" />
+
+                        <ImageButton
+                            android:id="@+id/btnEditarCategoriaUsuario"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:background="?selectableItemBackgroundBorderless"
+                            app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyNuevaCategoriaUsuario"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/spnCategoriasUsuario"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:entries="@array/CategoriaUsuario" />
+
+                        <LinearLayout
+                            android:id="@+id/lyAccionesCategoriaUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/btnGuardarCategoriaUsuario"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+                            <ImageView
+                                android:id="@+id/btnCancelarCategoriaUsuario"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                app:srcCompat="@drawable/ic_baseline_cancel_24" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyHospedajeAdmin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtSitioHospedaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_baseline_location_city_24"
+                            android:fontFamily="@font/open_sans"
+                            android:gravity="left"
+                            android:text="HOTEL EL CISNE"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txvInformacionUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_condensed_bold"
+                    android:text="@string/InformacionUsuario"
+                    android:textColor="#0D0D0D"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lyNombreUsuario"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txvNombreUsuario"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:maxLength="30"
+                            android:text="LEONARDO VILLAVICENCIO"
+                            android:textColor="#0D0D0D"
+                            android:textSize="30sp" />
+
+                        <ImageButton
+                            android:id="@+id/btnModificarNombreUsuario"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:background="?selectableItemBackgroundBorderless"
+                            app:srcCompat="@drawable/ic_baseline_edit_24" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyModificarNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/txtNombreUsuario"
+                            android:layout_width="200dp"
+                            android:layout_height="48dp"
+                            android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="@string/Nombre"
+                            android:inputType="textPersonName"
+                            android:maxLength="15"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:id="@+id/lyAccionesModificarNombreUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/btnGuardarNombreUsuario"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:scaleType="fitXY"
+                                app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+                            <ImageButton
+                                android:id="@+id/btnCancelarNombreUsuario"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:scaleType="fitXY"
+                                app:srcCompat="@drawable/ic_baseline_cancel_24" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyModificarApellido"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/txtApellidoUsuario"
+                            android:layout_width="200dp"
+                            android:layout_height="48dp"
+                            android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="@string/Apellido"
+                            android:inputType="textPersonName"
+                            android:maxLength="15"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:id="@+id/lyAccionesModificarApellidoUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/btnGuardarApellidoUsuario"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:scaleType="fitXY"
+                                app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+                            <ImageButton
+                                android:id="@+id/btnCancelarApellidoUsuario"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:scaleType="fitXY"
+                                app:srcCompat="@drawable/ic_baseline_cancel_24" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lyInfoEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txvEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:drawableLeft="@drawable/ic_baseline_email_24"
+                            android:fontFamily="@font/open_sans"
+                            android:gravity="center"
+                            android:text="neschp@gmail.com"
+                            android:textSize="20sp" />
+
+                        <ImageButton
+                            android:id="@+id/btnModificarEmail"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:background="?selectableItemBackgroundBorderless"
+                            app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyEditarEmailUsuario"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:id="@+id/txtEmailUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="@string/Email"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="100" />
+
+                        <LinearLayout
+                            android:id="@+id/lyAccionesEmailUsuario"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/btnGuardarEmail"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+                            <ImageView
+                                android:id="@+id/btnCancelarEmail"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                app:srcCompat="@drawable/ic_baseline_cancel_24" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyContraseña"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lyTituloContraseña"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/open_sans_condensed_bold"
+                            android:gravity="center"
+                            android:text="@string/TituloContrasena"
+                            android:textColor="#0D0D0D"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <ImageButton
+                            android:id="@+id/btnEditarContraseñaUsuario"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:background="?selectableItemBackgroundBorderless"
+                            app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyNuevaContraseña"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/txtContraseñaUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="@string/Contrasena"
+                            android:inputType="textPassword"
+                            android:maxLength="16" />
+
+                        <EditText
+                            android:id="@+id/txtConfirmarContraseñaUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="@string/ConfirmarContrasena"
+                            android:inputType="textPassword"
+                            android:maxLength="16" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyModificarContraseña"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/txtAntiguaContraseñaUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="@string/ContrasenaAntigua"
+                            android:inputType="textPassword"
+                            android:maxLength="16" />
+
+                        <EditText
+                            android:id="@+id/txtNuevaContraseñaUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="@string/ContrasenaNueva"
+                            android:inputType="textPassword"
+                            android:maxLength="16" />
+
+                        <EditText
+                            android:id="@+id/txtConfirmaNuevaContraseña"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="@string/ConfirmarContrasena"
+                            android:inputType="textPassword"
+                            android:maxLength="16" />
+
+                        <LinearLayout
+                            android:id="@+id/btnAccionesContraseña"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/btnGuardarContraseña"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="50dp"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:scaleType="fitXY"
+                                app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+                            <ImageButton
+                                android:id="@+id/btnCancelarContraseña"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="50dp"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:scaleType="fitXY"
+                                app:srcCompat="@drawable/ic_baseline_cancel_24" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyFechaNacimiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lyInfoFechaNac"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txvFechaNacimiento"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
+                            android:fontFamily="@font/open_sans"
+                            android:gravity="center"
+                            android:text="02/06/1999"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/btnModificarFechaNacimiento"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="15dp"
+                            app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyModificarFechaNacimiento"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:id="@+id/txtFechaNacimiento"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="false"
+                            android:hint="@string/FechaNacimiento"
+                            android:inputType="date"
+                            android:maxLines="1" />
+
+                        <LinearLayout
+                            android:id="@+id/lyAccionesFechaNacimiento"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/btnGuardarFechaNacimiento"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+                            <ImageView
+                                android:id="@+id/btnCancelarFechaNacimiento"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                app:srcCompat="@drawable/ic_baseline_cancel_24" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyBotones"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnCerrarSesion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#E48686"
+                        android:drawableLeft="@drawable/ic_baseline_exit_to_app_24"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:onClick="cerrarSesion"
+                        android:text="@string/CerrarSesion"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/btnGuardarEdicion"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#c76363"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:onClick="ModificarUsuarioHuesped"
+                        android:text="@string/Guardar"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:textSize="25sp" />
+
+                    <Button
+                        android:id="@+id/btnEditarUsuario"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#c76363"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:onClick="irModificar"
+                        android:text="@string/Editar"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:textSize="25sp" />
+
+                    <Button
+                        android:id="@+id/btnRegistrarUsuario"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#c76363"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:onClick="RegistrarUsuarioHuesped"
+                        android:text="@string/Registrar"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:textSize="25sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

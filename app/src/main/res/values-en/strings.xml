@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AMMBR</string>
+    <string name="CrearCuenta">Create Account</string>
+    <string name="Nombre">First Name</string>
+    <string name="Apellido">Last Name</string>
+    <string-array name="CategoriaUsuario">
+        <item>Housing Administrator </item>
+        <item>User</item>
+        <item>AMMBR Admin </item>
+    </string-array>
+    <string name="Email">E-mail</string>
+    <string name="Genero">Choose gender</string>
+    <string name="Masculino">Male</string>
+    <string name="Femenino">Female</string>
+    <string name="FechaNacimiento">Date of Birth</string>
+    <string name="Contrasena">Enter the Password</string>
+    <string name="ConfirmarContrasena">Confirm your Password</string>
+    <string name="ContrasenaAntigua">Write your Old Password</string>
+    <string name="ContrasenaNueva">Write your New Password</string>
+    <string name="TituloContrasena">Password</string>
+    <string name="Guardar">Save</string>
+    <string name="ID">Identifier</string>
+    <string name="NombreHospedaje">Name of your Site</string>
+    <string name="Descripcion">Enter a Description</string>
+    <string name="Telefono">Phone</string>
+    <string name="Celular">Cell Phone Number</string>
+    <string name="TipoPago">Select the Payment Types you Support</string>
+    <string name="PagoEfectivo">Cash</string>
+    <string name="PagoTarjeta">Credit Card</string>
+    <string name="PagoElectronico">Clectronic Payment</string>
+    <string name="Categoria">Category</string>
+    <string-array name="CategoriaHospedaje">
+        <item>HOTEL</item>
+        <item>HOSTEL</item>
+        <item>Inn</item>
+    </string-array>
+    <string name="RedesSociales">Social Networks</string>
+    <string name="SitioWeb">Website URL</string>
+    <string name="Facebook">Facebook URL</string>
+    <string name="Whatsapp">Whatsapp URL</string>
+    <string name="Instagram">Instagram URL</string>
+    <string name="Ubicacion">Location</string>
+    <string name="Latitud">Latitude</string>
+    <string name="Longitud">Longitude</string>
+    <string name="Distancia">Distance:</string>
+    <string name="Pago">Payments Allowed</string>
+    <string name="Caracteristicas">Popular Features</string>
+
+    <string name="WifiLobby">Wifi in Lobby</string>
+    <string name="WifiCuarto">Wi-Fi in the Room</string>
+    <string name="Piscina">Pool</string>
+    <string name="Spa">Spa</string>
+    <string name="Estacionamiento">Parking Lot</string>
+    <string name="Mascotas">pets allowed</string>
+    <string name="Aire">Air Conditioning</string>
+    <string name="Restaurante">Restaurant</string>
+    <string name="Bar">Bar</string>
+    <string name="Gym">Gym</string>
+
+    <string name="Contactos">contacts</string>
+    <string name="Habitaciones">Bedrooms</string>
+    <string name="Opiniones">Opinions</string>
+    <string name="NuevaOpinion">Write an Opinion</string>
+    <string name="Calificacion">Rate the Place</string>
+    <string name="Comentario">Write your Comment</string>
+    <string name="Acerca">About</string>
+    <string name="Precio">PRICE</string>
+    <string name="Informacion">Place Information</string>
+    <string name="Administrador">Administrator</string>
+    <string name="Caracteristica">Site Feature</string>
+    <string name="NumeroCamas">Number of Beds:</string>
+    <string-array name="Camas">
+        <item name="SIMPLE">1</item>
+        <item name="DOBLE">2</item>
+        <item name="FAMILIAR">3</item>
+        <item name="GRUPAL">4</item>
+    </string-array>
+    <string name="PrecioIngreso">Enter the Price</string>
+    <string name="Registrar">Sing in</string>
+    <string name="Siguiente">Next</string>
+    <string name="CompletarRegistro">Accept Registration</string>
+    <string name="InformacionUsuario">Your Information</string>
+    <string-array name="Hospedajes">
+        <item>HOTEL RIOBAMBA</item>
+        <item>HOTEL HACIENDA</item>
+        <item>HOTEL ZEUS</item>
+    </string-array>
+    <string name="Editar">EDIT</string>
+    <string name="hint_usuario">User</string>
+    <string name="hint_contraseña">Password</string>
+    <string name="hint_IniciarSesion">Log in</string>
+    <string name="button_Registrar">Register account</string>
+    <string name="Cercano">Go to the nearest site</string>
+    <string name="EncuentraSitio">Find a place</string>
+    <string name="Bienvenido">Welcome </string>
+    <string name="TextoCalificacion">Qualification</string>
+    <string name="SinCalificacion">Unrated</string>
+    <string-array name="Idioma">
+        <item>Español</item>
+        <item>English</item>
+    </string-array>
+    <string name="recuperar"> Forgot password?</string>
+    <string name="RegistrarLogin">You do not have an account? join up</string>
+    <string name="EmailLogin">E-mail</string>
+    <string name="ErrorLogin">Incorrect Email or Password</string>
+    <string name="ControlNombre">Please enter a valid Name</string>
+    <string name="ControlApellido">Enter a valid Last Name</string>
+    <string name="ControlEmail">Enter a valid email</string>
+    <string name="ControlContraseña">Empty Password Field</string>
+    <string name="ControlContraseña2">Confirm your password</string>
+    <string name="ControlFecha">Enter a valid date of birth</string>
+    <string name="ControlEdad">Prohibited the registration of minors under 18 years of age</string>
+    <string name="ControlConfContraseña">Passwords do not match</string>
+    <string name="UsuarioExiste">An account already exists with the email entered</string>
+    <string name="ControlAdminSitio">There are no registered hosting site administrators</string>
+
+    <string name="CampoVacio">empty field</string>
+    <string name="ControlDescripcion">Campo Descripción vacío</string>
+    <string name="ControlTelefono">Field Description empty</string>
+    <string name="ControlPagos">Select at least one payment</string>
+    <string name="ControlCaracteristicas">Enter at least one feature</string>
+    <string name="ControlHabitaciones">Enter at least one room</string>
+    <string name="Error">Oops there was an error! Try again</string>
+    <string name="title_activity_vista_menu">ViewMenu</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="AdminSitio">Site Administrator</string>
+    <string name="SitioHospedaje">Hosting Site</string>
+    <string name="CerrarSesion">Sign off</string>
+    <string name="Idioma">Idiom</string>
+    <string name="SinSitios">No Sites</string>
+    <string name="SinEstrellas">At least 1 star</string>
+    <string name="ExisteComentario">You already have an opinion in this Site</string>
+    <string name="NuevoSitio">New Site</string>
+    <string name="NuevoAdmin">New Manager</string>
+    <string name="IrSitio">Site</string>
+    <string name="IrAdmins">Manager</string>
+    <string name="MiSitio">My Site</string>
+    <string name="Eliminar">¿Are you sure to delete the choosed manager?</string>
+    <string name="SesionIniciada">Succesful Log</string>
+
+</resources>

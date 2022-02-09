@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="100dp"
+    android:layout_marginRight="30dp"
+    android:orientation="vertical"
+    tools:context=".Vista.VistaMenuSitio">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Sitios de Hospedaje"
+        android:textSize="15sp" />
+
+    <SearchView
+        android:id="@+id/shvHoteles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/spnSitios"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/btnEditarSitio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:backgroundTint="#c76363"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="@string/Editar"
+        android:textColor="#ffffff"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnEliminarSitio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:backgroundTint="#c76363"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Eliminar"
+        android:textColor="#ffffff"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnNuevoSitio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:backgroundTint="#c76363"
+        android:fontFamily="@font/open_sans_bold"
+        android:onClick="RegistrarNuevoSitio"
+        android:text="@string/NuevoSitio"
+        android:textColor="#ffffff"
+        android:textSize="15sp" />
+</LinearLayout>

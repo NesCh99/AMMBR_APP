@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AMMBR</string>
+    <string name="CrearCuenta">Crear Cuenta</string>
+    <string name="Nombre">Nombre</string>
+    <string name="Apellido">Apellido</string>
+    <string-array name="CategoriaUsuario">
+        <item>Administrador Hospedaje</item>
+        <item>Usuario</item>
+        <item>Administrador AMMBR</item>
+    </string-array>
+    <string name="Email">Correo Electrónico</string>
+    <string name="Genero">Escoja un Género</string>
+    <string name="Masculino">Masculino</string>
+    <string name="Femenino">Femenino</string>
+    <string name="FechaNacimiento">Fecha de Nacimiento</string>
+    <string name="Contrasena">Escribe tu Contraseña</string>
+    <string name="ConfirmarContrasena">Confirma tu Contraseña</string>
+    <string name="ContrasenaAntigua">Escribe tu Antigua Contraseña</string>
+    <string name="ContrasenaNueva">Escribe tu Contraseña Nueva</string>
+    <string name="TituloContrasena">Contraseña</string>
+    <string name="Guardar">Guardar</string>
+    <string name="ID">Identificador</string>
+    <string name="NombreHospedaje">Nombre de tu Sitio</string>
+    <string name="Descripcion">Introduce una Descripción</string>
+    <string name="Telefono">Teléfono</string>
+    <string name="Celular">Número de Celular</string>
+    <string name="TipoPago">Seleccione los tipos de pago que admite</string>
+    <string name="PagoEfectivo">Efectivo</string>
+    <string name="PagoTarjeta">Tarjeta de Crédito</string>
+    <string name="PagoElectronico">Electrónico</string>
+    <string name="Categoria">Categoría</string>
+    <string-array name="CategoriaHospedaje">
+        <item>HOTEL</item>
+        <item>HOSTAL</item>
+        <item>HOSTERIA</item>
+    </string-array>
+    <string name="RedesSociales">Redes Sociales</string>
+    <string name="SitioWeb">URL Sitio WEB</string>
+    <string name="Facebook">URL Facebook</string>
+    <string name="Whatsapp">URL Whatsapp</string>
+    <string name="Instagram">URL Instagram</string>
+    <string name="Ubicacion">Ubicación</string>
+    <string name="Latitud">Latitud</string>
+    <string name="Longitud">Longitud</string>
+    <string name="Distancia">Distancia: </string>
+    <string name="Pago">Pagos Permitidos</string>
+    <string name="Caracteristicas">Caracteristicas populares</string>
+
+    <string name="WifiLobby">Wifi en Lobby</string>
+    <string name="WifiCuarto">Wifi en la habitación</string>
+    <string name="Piscina">Piscina</string>
+    <string name="Spa">Spa</string>
+    <string name="Estacionamiento">Estacionamiento</string>
+    <string name="Mascotas">Mascotas Permitidas</string>
+    <string name="Aire">Aire Acondicionado</string>
+    <string name="Restaurante">Restaurante</string>
+    <string name="Bar">Bar</string>
+    <string name="Gym">Gimnasio</string>
+
+    <string name="Contactos">Contactos</string>
+    <string name="Habitaciones">Habitaciones</string>
+    <string name="Opiniones">Opiniones</string>
+    <string name="NuevaOpinion">Escribe una Opinion</string>
+    <string name="Calificacion">Califica el lugar</string>
+    <string name="Comentario">Escribe tu comentario</string>
+    <string name="Acerca">Acerca de</string>
+    <string name="Precio">PRECIO</string>
+    <string name="Informacion">Información del lugar</string>
+    <string name="Administrador">Administrador</string>
+    <string name="Caracteristica">Característica del Sitio</string>
+    <string name="NumeroCamas">Número de Camas:</string>
+    <string-array name="Camas">
+        <item name="SIMPLE">1</item>
+        <item name="DOBLE">2</item>
+        <item name="FAMILIAR">3</item>
+        <item name="GRUPAL">4</item>
+    </string-array>
+    <string name="PrecioIngreso">Ingrese el Precio</string>
+    <string name="Registrar">Registrar</string>
+    <string name="Siguiente">Siguiente</string>
+    <string name="CompletarRegistro">Completar Registro</string>
+    <string name="InformacionUsuario">Tu Información</string>
+    <string-array name="Hospedajes">
+        <item>HOTEL RIOBAMBA</item>
+        <item>HOTEL HACIENDA</item>
+        <item>HOTEL ZEUS</item>
+    </string-array>
+    <string name="Editar">EDITAR</string>
+    <string name="hint_usuario">Usuario</string>
+    <string name="hint_contraseña">Contraseña</string>
+    <string name="hint_IniciarSesion">Iniciar Sesión</string>
+    <string name="button_Registrar">Registrar Cuenta</string>
+    <string name="Cercano">Ir al sitio más cercano</string>
+    <string name="EncuentraSitio">Busca un sitio</string>
+    <string name="Bienvenido">Bienvenid@, </string>
+    <string name="TextoCalificacion">Calificación</string>
+    <string name="SinCalificacion">Sin Calificación</string>
+    <string-array name="Idioma">
+        <item>Español</item>
+        <item>English</item>
+    </string-array>
+    <string name="recuperar"> ¿Olvidaste la contraseña?</string>
+    <string name="RegistrarLogin">¿No tienes cuenta? Únete</string>
+    <string name="EmailLogin">Email</string>
+    <string name="ErrorLogin">Email o Contraseña Incorrectos</string>
+    <string name="ControlNombre">Ingrese un Nombre valido</string>
+    <string name="ControlApellido">Ingrese un Apellido valido</string>
+    <string name="ControlEmail">Ingrese un Email valido</string>
+    <string name="ControlContraseña">Campo Contraseña vacío</string>
+    <string name="ControlContraseña2">Confirme su contraseña</string>
+    <string name="ControlFecha">Ingrese una fecha de nacimiento valida</string>
+    <string name="ControlEdad">Prohibido el registro de menores de 18 años</string>
+    <string name="ControlConfContraseña">No Coinciden las contraseñas</string>
+    <string name="UsuarioExiste">Ya existe una cuenta con el email ingresado</string>
+    <string name="ControlAdminSitio">No existen administradores de sitio de hospedaje registrados</string>
+
+    <string name="CampoVacio">Campo Vacío</string>
+    <string name="ControlDescripcion">Campo Descripción vacío</string>
+    <string name="ControlTelefono">Campo Teléfono vacío</string>
+    <string name="ControlPagos">Seleccione al menos un pago</string>
+    <string name="ControlCaracteristicas">Ingrese al menos una caracteristica</string>
+    <string name="ControlHabitaciones">Ingrese al menos una habitación</string>
+    <string name="Error">Ups hubo un error! Intentalo de nuevo</string>
+    <string name="title_activity_vista_menu">VistaMenu</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="AdminSitio">Administrador de Sitio</string>
+    <string name="SitioHospedaje">Sitio de Hospedaje</string>
+    <string name="CerrarSesion">Cerrar Sesión</string>
+    <string name="Idioma">Idioma</string>
+    <string name="SinSitios">Aun no existen sitios registrados</string>
+    <string name="SinEstrellas">Mínimo 1 estrella</string>
+    <string name="ExisteComentario">Ud ya registra un comentario en este sitio</string>
+    <string name="NuevoSitio">Nuevo Sitio</string>
+    <string name="NuevoAdmin">Nuevo Admin</string>
+    <string name="IrSitio">Sitio</string>
+    <string name="IrAdmins">Admin</string>
+    <string name="MiSitio">Mi Sitio</string>
+    <string name="Eliminar">¿Esta seguro de eliminar el administrador?</string>
+    <string name="SesionIniciada">Sesión Iniciada con éxito</string>
+
+</resources>

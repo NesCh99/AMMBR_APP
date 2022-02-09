@@ -1,0 +1,1761 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:orientation="vertical"
+    tools:context=".Vista.VistaSitioHospedaje">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cdPortada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="25dp">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imgPortadaHospedaje"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="false"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/hospedaje" />
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cdDistancia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:cardCornerRadius="10dp"
+                        app:contentPadding="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView14"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="bottom"
+                                app:srcCompat="@drawable/ic_baseline_location_on_24" />
+
+                            <TextView
+                                android:id="@+id/txvDistanciaSitio"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="bottom"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:gravity="bottom"
+                                android:text="3.5 KM"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardEditarPortadaHosteria"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardCornerRadius="50dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/imgPortadaHospedaje">
+
+                        <ImageView
+                            android:id="@+id/btnEditarPortadaHospedaje"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="5dp"
+                            android:onClick="cargarImagen"
+                            app:srcCompat="@drawable/ic_baseline_edit_24" />
+                    </android.support.v7.widget.CardView>
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/lyAccesoRedesSociales"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btnFacebook"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/facebook" />
+
+                <ImageView
+                    android:id="@+id/btnInstagram"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/instagram" />
+
+                <ImageView
+                    android:id="@+id/btnWeb"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/web" />
+
+                <ImageView
+                    android:id="@+id/btnEditarRedes"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:onClick="MlyRedesSocialesHospedaje"
+                    app:srcCompat="@drawable/ic_baseline_edit_24" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyPrimerRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txvInformacionTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/Informacion"
+                    android:textColor="#0D0D0D"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TableLayout
+                    android:id="@+id/lyModificarNombreHospedaje"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:id="@+id/tbrNombreHospedaje"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/txvNombreHospedajeModificar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="center|left"
+                            android:maxWidth="300dp"
+                            android:text="HOTEL EL CISNE"
+                            android:textColor="#0D0D0D"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/btnEditarNombreHospedaje"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:onClick="MtbrNuevoNombreHospedaje"
+                            app:srcCompat="@drawable/ic_baseline_edit_24" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tbrNuevoNombreHospedaje"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:id="@+id/txtNuevoNombreHospedaje"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:digits="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="@string/NombreHospedaje"
+                            android:inputType="textPersonName"
+                            android:maxLength="30"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:id="@+id/lyAccionesNombreSitio"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/btnGuardarNombreHospedaje"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+                            <ImageView
+                                android:id="@+id/btnNombreCategoriaHospedaje"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="10dp"
+                                app:srcCompat="@drawable/ic_baseline_cancel_24" />
+                        </LinearLayout>
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/lyModificarCategoriaHospedaje"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:id="@+id/tbrCategoriaHospedaje"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/txvCategoriaHospedaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="center|left"
+                            android:maxWidth="300dp"
+                            android:text="HOTEL"
+                            android:textColor="#B2666E"
+                            android:textSize="15sp"
+                            android:textStyle="italic" />
+
+                        <ImageView
+                            android:id="@+id/btnEditarCategoriaHospedaje"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="15dp"
+                            android:onClick="MtbrModificarCategoriaHospedaje"
+                            app:srcCompat="@drawable/ic_baseline_edit_24" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tbrModificarCategoriaHospedaje"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:visibility="visible">
+
+                        <Spinner
+                            android:id="@+id/cbxNuevaCategoriaHospedaje"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:entries="@array/CategoriaHospedaje" />
+
+                        <LinearLayout
+                            android:id="@+id/lyAccionesCategoriaHospedaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/btnGuardarCategoriaHospedaje"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+                            <ImageView
+                                android:id="@+id/btnCancelarCategoriaHospedaje"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                app:srcCompat="@drawable/ic_baseline_cancel_24" />
+                        </LinearLayout>
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyInfoAdmin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="@string/Administrador"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:id="@+id/lyModificarAdministradorSitio"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txvAdministradorSitio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans"
+                            android:text="neschp@gmail.com"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:id="@+id/lyAccionesAdminSitio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/btnGuardarAdminSitio"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+                            <ImageView
+                                android:id="@+id/btnCancelarAdminSitio"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                app:srcCompat="@drawable/ic_baseline_cancel_24" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/spnAdministradoresSitio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyModificarDescripcionHospedaje"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="center"
+                            android:text="@string/Acerca"
+                            android:textColor="#0D0D0D"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/btnEditarDescripcion"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:onClick="MtbrModificarDescripcionHospedaje"
+                            app:srcCompat="@drawable/ic_baseline_edit_24" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txvDescripcionHospedajeModificar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans"
+                        android:text="Este hotel esta cerca al centro y tiene muchos precios"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:id="@+id/tbrModificarDescripcionHospedaje"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:id="@+id/txtNuevaDescripcionHospedaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="@string/Descripcion"
+                            android:inputType="textPersonName"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:id="@+id/lyAccionesDescripcionHospedaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/btnGuardarNuevaDescripcion"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="15dp"
+                                app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+                            <ImageView
+                                android:id="@+id/btnCancelarNuevaDescripcion"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="15dp"
+                                app:srcCompat="@drawable/ic_baseline_cancel_24" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyUbicacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="@string/Ubicacion"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/txtLatitudSitio"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:digits="-0123456789."
+                        android:fontFamily="@font/open_sans"
+                        android:hint="@string/Latitud"
+                        android:inputType="textPersonName"
+                        android:maxLength="12" />
+
+                    <EditText
+                        android:id="@+id/txtLongitudSitio"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:digits="-0123456789."
+                        android:fontFamily="@font/open_sans"
+                        android:hint="@string/Longitud"
+                        android:inputType="textPersonName"
+                        android:maxLength="13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyModificarTelefonoHospedaje"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="@string/Contactos"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:id="@+id/lyTelefono"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView13"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="15dp"
+                            app:srcCompat="@drawable/ic_baseline_contact_phone_24" />
+
+                        <TextView
+                            android:id="@+id/txvTelefonoHospedajeModificar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans"
+                            android:gravity="center"
+                            android:text="0960175021"
+                            android:textColor="#0D0D0D"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/btnEditarTelefono"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="15dp"
+                            android:onClick="MlyEditarTelefonoHospedaje"
+                            app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyEditarEmailUsuario"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:id="@+id/txtNuevoTelefonoHospedaje"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:digits="0123456789"
+                            android:ems="10"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="@string/Telefono"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:id="@+id/lyAccionesTelefono"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/btnGuardarNuevoTelefono"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+                            <ImageView
+                                android:id="@+id/btnCancelarTelefono"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                app:srcCompat="@drawable/ic_baseline_cancel_24" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lySocialesSitio"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lyRedesSocialesHospedaje"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView27"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:text="@string/RedesSociales"
+                            android:textColor="#0D0D0D"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:id="@+id/chbxFacebookHospedaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans"
+                            android:text="@string/Facebook"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/txtFacebookHospedaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="@string/Facebook"
+                            android:inputType="textPersonName"
+                            android:textSize="15sp"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/chbxInstagramHospedaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans"
+                            android:text="@string/Instagram"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/txtInstagramHospedaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="@string/Instagram"
+                            android:inputType="textPersonName"
+                            android:textSize="15sp"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/chbxWebHospedaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans"
+                            android:text="@string/SitioWeb"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/txtWebHospedaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="@string/SitioWeb"
+                            android:inputType="textPersonName"
+                            android:textSize="15sp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="#CFCFCF"
+                    app:cardCornerRadius="25dp"
+                    app:contentPadding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            app:srcCompat="@drawable/ic_baseline_payments_24" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:text="@string/Pago"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/btnAgregarPago"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:onClick="MlyPagos"
+                            app:srcCompat="@drawable/ic_baseline_add_box_24" />
+
+                        <ImageView
+                            android:id="@+id/btnFlechaPagos"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:onClick="listarPagos"
+                            android:rotation="90"
+                            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/lyPagos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:scrollbarSize="15sp">
+
+                    <CheckBox
+                        android:id="@+id/chbxPagoefectivo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans"
+                        android:text="@string/PagoEfectivo"
+                        android:textSize="15sp" />
+
+                    <CheckBox
+                        android:id="@+id/chbxPagoCredito"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans"
+                        android:text="@string/PagoTarjeta"
+                        android:textSize="15sp" />
+
+                    <CheckBox
+                        android:id="@+id/chbxPagoElectronico"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans"
+                        android:text="@string/PagoElectronico"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyCardsPagos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    android:visibility="visible">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardPagoEfectivo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:backgroundTint="#f1f1f1"
+                        app:cardCornerRadius="25dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                app:srcCompat="@drawable/ic_baseline_money_24" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:gravity="center|left"
+                                android:text="@string/PagoEfectivo"
+                                android:textColor="#404040"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardPagoCredito"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:backgroundTint="#f1f1f1"
+                        app:cardCornerRadius="25dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                app:srcCompat="@drawable/ic_baseline_credit_card_24" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:gravity="center|left"
+                                android:text="@string/PagoTarjeta"
+                                android:textColor="#404040"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardPagoElectronico"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:backgroundTint="#f1f1f1"
+                        app:cardCornerRadius="25dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                app:srcCompat="@drawable/ic_baseline_card_membership_24" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:gravity="center|left"
+                                android:text="@string/PagoElectronico"
+                                android:textColor="#404040"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lySegundoRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/lyCaracteristicas"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:backgroundTint="#CFCFCF"
+                        app:cardCornerRadius="25dp"
+                        app:contentPadding="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView16"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="10dp"
+                                app:srcCompat="@drawable/ic_baseline_room_service_24" />
+
+                            <TextView
+                                android:id="@+id/textView18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="@string/Caracteristicas"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/btnNuevaCaracteristicaHospedaje"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="10dp"
+                                android:onClick="MlyNuevaCaracteristicaHospedaje"
+                                app:srcCompat="@drawable/ic_baseline_add_box_24" />
+
+                            <ImageView
+                                android:id="@+id/btnFlechaCaracteristicas"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:onClick="btnCaracteristicas"
+                                android:rotation="90"
+                                app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <LinearLayout
+                        android:id="@+id/lyNuevaCaracteristicaHospedaje"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/chbxWifiLobby"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans"
+                                android:text="@string/WifiLobby"
+                                android:textSize="15sp" />
+
+                            <CheckBox
+                                android:id="@+id/chbxWifiHabitacion"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans"
+                                android:text="@string/WifiCuarto"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/chbxPiscina"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans"
+                                android:text="@string/Piscina"
+                                android:textSize="15sp" />
+
+                            <CheckBox
+                                android:id="@+id/chbxSpa"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans"
+                                android:text="@string/Spa"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/chbxBar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans"
+                                android:text="@string/Bar"
+                                android:textSize="15sp" />
+
+                            <CheckBox
+                                android:id="@+id/chbxGym"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans"
+                                android:text="@string/Gym"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/chbxEstacionamiento"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans"
+                                android:text="@string/Estacionamiento"
+                                android:textSize="15sp" />
+
+                            <CheckBox
+                                android:id="@+id/chbxMascotas"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans"
+                                android:text="@string/Mascotas"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/chbxAire"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans"
+                                android:text="@string/Aire"
+                                android:textSize="15sp" />
+
+                            <CheckBox
+                                android:id="@+id/chbxRestaurante"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans"
+                                android:text="@string/Restaurante"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyAccionesCaracteristicas"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:visibility="visible">
+
+                            <ImageView
+                                android:id="@+id/btnGuardarNuevaCaracteristica"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+                            <ImageView
+                                android:id="@+id/btnCancelarNuevaCaracteristica"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="15dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/ic_baseline_cancel_24" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyServicios"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/cardCaracteristicaHospedaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:backgroundTint="#F1F1F1"
+                            app:cardCornerRadius="25dp">
+
+                            <LinearLayout
+                                android:id="@+id/lyCar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/imgCheck"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+                                <TextView
+                                    android:id="@+id/txtCaracteristicaHospedaje"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:gravity="center|left"
+                                    android:text="WiFi"
+                                    android:textColor="#404040"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/btnEditarCaracteristicaHospedaje"
+                                    android:layout_width="45dp"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="10dp"
+                                    app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+                                <ImageView
+                                    android:id="@+id/btnBorrarCaracteristicaHospedaje"
+                                    android:layout_width="45dp"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="10dp"
+                                    app:srcCompat="@drawable/ic_baseline_delete_24" />
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyHabitaciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:backgroundTint="#CFCFCF"
+                        app:cardCornerRadius="25dp"
+                        app:contentPadding="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="10dp"
+                                app:srcCompat="@drawable/ic_baseline_local_hotel_24" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="@string/Habitaciones"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/btnAgregarHabitacion"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="10dp"
+                                android:onClick="MlyNuevaHabitacion"
+                                app:srcCompat="@drawable/ic_baseline_add_box_24" />
+
+                            <ImageView
+                                android:id="@+id/btnFlechaHabitaciones"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:onClick="btnHabitaciones"
+                                android:rotation="90"
+                                app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <LinearLayout
+                        android:id="@+id/lyNuevaHabitacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <EditText
+                            android:id="@+id/txtDescripcionHabitacion"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:ems="10"
+                            android:fontFamily="@font/open_sans"
+                            android:gravity="start|top"
+                            android:hint="@string/Descripcion"
+                            android:inputType="textMultiLine"
+                            android:maxLength="20" />
+
+                        <EditText
+                            android:id="@+id/txtPrecioHabitacion"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:digits="0123456789."
+                            android:ems="10"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="@string/PrecioIngreso"
+                            android:inputType="numberDecimal" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="@string/NumeroCamas"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <Spinner
+                                android:id="@+id/spnNumeroCamas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:entries="@array/Camas" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btnGuardarHabitacion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@color/menu_back"
+                            android:onClick="RegistrarHabitacionSitio"
+                            android:text="@string/Guardar"
+                            android:textAllCaps="false"
+                            android:textColor="#ffffff"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyHabitacionesMostrar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/cardHabitacionHospedaje"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:cardCornerRadius="25dp">
+
+                            <LinearLayout
+                                android:id="@+id/lyHabitacionContenedor"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/lyInfoHabitacionContenedor"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/txvPrecioHabitacionHospedaje"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center|left"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:gravity="left"
+                                        android:minWidth="100dp"
+                                        android:text="$100"
+                                        android:textAlignment="center"
+                                        android:textColor="#000000"
+                                        android:textSize="25sp"
+                                        android:textStyle="bold" />
+
+                                    <LinearLayout
+                                        android:id="@+id/lyInfoHabitacion"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/txvCategoriaHabitacionHospedaje"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/open_sans_bold"
+                                            android:text="DOBLE"
+                                            android:textSize="20sp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/txvDescripcionHabitacionHospedaje"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="5dp"
+                                            android:fontFamily="@font/open_sans"
+                                            android:text="Habitacion amplia perfecta para parejas"
+                                            android:textColor="#737373"
+                                            android:textSize="20sp" />
+
+                                        <LinearLayout
+                                            android:id="@+id/lyCamasHabitacion"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/txvNUmeroCamasHabitacion"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:fontFamily="@font/open_sans"
+                                                android:gravity="center|left"
+                                                android:text="2"
+                                                android:textColor="#737373"
+                                                android:textSize="30sp"
+                                                android:textStyle="bold" />
+
+                                            <ImageView
+                                                android:id="@+id/imgCamas"
+                                                android:layout_width="35dp"
+                                                android:layout_height="35dp"
+                                                android:layout_gravity="bottom"
+                                                app:srcCompat="@drawable/ic_baseline_single_bed_24" />
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/lyAccionesHabitacionMostrar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/btnEditarHabitacion"
+                                        android:layout_width="35dp"
+                                        android:layout_height="35dp"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+                                    <ImageView
+                                        android:id="@+id/btnEliminarHabitacion"
+                                        android:layout_width="35dp"
+                                        android:layout_height="35dp"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/ic_baseline_delete_24" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyOpinionesHospedaje"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="#CFCFCF"
+                    app:cardCornerRadius="25dp"
+                    app:contentPadding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="10dp"
+                                app:srcCompat="@drawable/ic_baseline_comment_24" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="@string/Opiniones"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/btnAgregarOpinion"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="10dp"
+                                android:onClick="MlyNuevaOpinion"
+                                app:srcCompat="@drawable/ic_baseline_add_box_24" />
+
+                            <ImageView
+                                android:id="@+id/btnFlechaOpiniones"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:onClick="listarOpiniones"
+                                android:rotation="90"
+                                app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/lyNuevaOpinion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Calificacion"
+                        android:textColor="#404040"
+                        android:textSize="15sp"
+                        android:textStyle="bold|italic" />
+
+                    <TextView
+                        android:id="@+id/txvIdOpinionEditar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
+
+                    <RatingBar
+                        android:id="@+id/rtbEstrellas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:backgroundTint="#FFC107"
+                        android:numStars="5"
+                        android:rating="0"
+                        android:stepSize="1" />
+
+                    <EditText
+                        android:id="@+id/txtComentarioHospedaje"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="@string/Comentario"
+                        android:inputType="textMultiLine" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/btnEnviarOpinion"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:onClick="registrarOpinion"
+                            app:srcCompat="@drawable/ic_baseline_send_24" />
+
+                        <ImageView
+                            android:id="@+id/btnCancelarNuevaOpinion"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:onClick="cancelarOpinion"
+                            app:srcCompat="@drawable/ic_baseline_cancel_24" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyOpinionesContenedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardOpinion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardCornerRadius="25dp">
+
+                        <LinearLayout
+                            android:id="@+id/lyContenedorOpinion"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <LinearLayout
+                                android:id="@+id/lyInfoPerfilOpinion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <android.support.v7.widget.CardView
+                                    android:id="@+id/cardFotoPerfilUsuario"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_margin="5dp"
+                                    app:cardCornerRadius="50dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgFotoPerfilUsuario"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        tools:srcCompat="@tools:sample/avatars" />
+                                </android.support.v7.widget.CardView>
+
+                                <LinearLayout
+                                    android:id="@+id/lyInfoOpinion"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/txvNombreUsuarioOpinion"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_condensed_bold"
+                                        android:text="NESTOR CHELA"
+                                        android:textColor="#0D0D0D"
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/txvIdOpinion"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:visibility="gone" />
+
+                                    <TextView
+                                        android:id="@+id/txvComentarioOpinion"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="5dp"
+                                        android:fontFamily="@font/open_sans"
+                                        android:text="TOTALMENTE RECOMENDADO"
+                                        android:textColor="#737373"
+                                        android:textSize="15sp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <RatingBar
+                                android:id="@+id/rtbOpinionHospedaje"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:numStars="5"
+                                android:progressTint="#FFCA28"
+                                android:rating="4"
+                                android:stepSize="1" />
+
+                            <LinearLayout
+                                android:id="@+id/lyAccionesOpinion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/btnEditarOpinion"
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+                                <ImageView
+                                    android:id="@+id/btnBorrarOpinion"
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/ic_baseline_delete_24" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyBotones"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnCompletarRegistro"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#c76363"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:onClick="terminarRegistro"
+                    android:text="@string/CompletarRegistro"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textSize="25sp"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btnSiguienteCaracteristicas"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#c76363"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:onClick="RegistrarCaracteristica"
+                    android:text="@string/Siguiente"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textSize="25sp"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btnSiguienteSitio"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#c76363"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:onClick="RegistrarSitio"
+                    android:text="@string/Siguiente"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

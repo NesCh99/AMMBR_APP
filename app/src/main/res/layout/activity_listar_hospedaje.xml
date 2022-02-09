@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:isScrollContainer="true"
+    android:onClick="NuevaOpinion"
+    android:orientation="vertical"
+    tools:context=".Vista.Listar_Hospedaje">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F2DE77"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="false"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/hospedaje_predeterminado" />
+
+                <LinearLayout
+                    android:id="@+id/lyNomCatHospedaje"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#6D261E59"
+                    android:orientation="vertical"
+                    android:paddingLeft="15sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                    app:layout_constraintTop_toTopOf="@+id/imageView4">
+
+                    <TextView
+                        android:id="@+id/txvNombreHospedaje"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="NOMBRE  DEL HOTEL"
+                        android:textColor="#FFFFFF"
+                        android:textSize="35sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txvCategoriaHospedaje"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Categoria"
+                        android:textColor="#F2DE77"
+                        android:textStyle="bold|italic" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyRedes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView4">
+
+                    <ImageView
+                        android:id="@+id/imgFacebook"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="bottom|start|left"
+                        android:layout_weight="1"
+                        android:padding="5sp"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/facebook" />
+
+                    <ImageView
+                        android:id="@+id/imgInstagram"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="bottom|start|left"
+                        android:layout_weight="1"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/instagram" />
+
+                    <ImageView
+                        android:id="@+id/imgWhatsapp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="bottom|start|left"
+                        android:layout_weight="1"
+                        android:padding="5sp"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/whatsapp" />
+
+                    <ImageView
+                        android:id="@+id/imgWeb"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="bottom|start|left"
+                        android:layout_weight="1"
+                        android:padding="5sp"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/web" />
+
+                </LinearLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#261E59"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txvDescripcionHospedaje"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Aqui va una breve descripcion del sitio de hospedaje"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyListarHotel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardDistancia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="10dp"
+                    app:cardBackgroundColor="#D9D9D9"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#9163F2"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:layout_weight="1"
+                            android:paddingBottom="5dp"
+                            app:srcCompat="@drawable/ic_baseline_map_24" />
+
+                        <LinearLayout
+                            android:layout_width="250dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#CA6DF2"
+                            android:orientation="vertical"
+                            android:paddingLeft="10dp">
+
+                            <TextView
+                                android:id="@+id/txvDistancia"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0 KM"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/textView9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/Distancia" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="#D9D9D9"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#9163F2"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:layout_weight="1"
+                            android:paddingBottom="5dp"
+                            app:srcCompat="@android:drawable/stat_sys_phone_call" />
+
+                        <LinearLayout
+                            android:layout_width="250dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#CA6DF2"
+                            android:orientation="vertical"
+                            android:paddingLeft="10dp">
+
+                            <TextView
+                                android:id="@+id/txvTelefonoHospedaje"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity=""
+                                android:text="0000000000"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/Telefono" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardHabitaciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="10dp"
+                    app:cardBackgroundColor="#CA6DF2"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#9163F2"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/ic_baseline_bedtime_24" />
+
+                            <TextView
+                                android:id="@+id/textView15"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="@string/Habitaciones"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyHabitaciones"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp">
+
+                            <TableLayout
+                                android:id="@+id/lyHabitacion"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:padding="5dp">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:id="@+id/imageView12"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/ic_baseline_king_bed_24" />
+
+                                    <TextView
+                                        android:id="@+id/txvCategoriaHabitacion"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="DOBLE"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:id="@+id/txvPrecioHabitacion"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="$100"
+                                        android:textColor="#09A110"
+                                        android:textStyle="bold" />
+
+                                    <LinearLayout
+                                        android:id="@+id/lyDesCatHabitacion"
+                                        android:layout_width="300dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/txvDescripcionHabitacion"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:paddingTop="5dp"
+                                            android:paddingBottom="5dp"
+                                            android:text="Habitacion para una pareja"
+                                            android:textColor="#261E59"
+                                            android:textSize="15sp" />
+
+                                        <TextView
+                                            android:id="@+id/txvNumeroCamas"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="2 camas"
+                                            android:textSize="12sp" />
+
+                                    </LinearLayout>
+                                </TableRow>
+
+                            </TableLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardCaracteristicas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="#CA6DF2"
+                    app:cardCornerRadius="10dp"
+                    app:contentPaddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#9163F2"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/ic_baseline_room_service_24" />
+
+                            <TextView
+                                android:id="@+id/textView13"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="@string/Caracteristicas"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyServiciosExtra"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardPagos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="#CA6DF2"
+                    app:cardCornerRadius="10dp"
+                    app:contentPaddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#9163F2"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/ic_baseline_payments_24" />
+
+                            <TextView
+                                android:id="@+id/textView12"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="@string/Pago"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyPagos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/lyEfectivo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5sp"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:id="@+id/imageView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/ic_baseline_money_24" />
+
+                                <TextView
+                                    android:id="@+id/textView17"
+                                    android:layout_width="300dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center|left"
+                                    android:text="@string/PagoEfectivo"
+                                    android:textColor="#261E59" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyCredito"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5sp"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:id="@+id/imageView5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/ic_baseline_credit_card_24" />
+
+                                <TextView
+                                    android:id="@+id/txtContraseñaOlvidada"
+                                    android:layout_width="300dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center|left"
+                                    android:text="@string/PagoTarjeta"
+                                    android:textColor="#261E59" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyElectronico"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5sp"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:id="@+id/imageView6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/ic_baseline_card_membership_24" />
+
+                                <TextView
+                                    android:id="@+id/textView11"
+                                    android:layout_width="300dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center|left"
+                                    android:text="@string/PagoElectronico"
+                                    android:textColor="#261E59" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardOpiniones"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardBackgroundColor="#CA6DF2"
+                    app:cardCornerRadius="10dp"
+                    app:contentPaddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#7E57C2"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/ic_baseline_comment_24" />
+
+                            <TextView
+                                android:id="@+id/textView16"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="@string/Opiniones"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyOpiniones"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp">
+
+                            <LinearLayout
+                                android:id="@+id/btnNuevaOpinion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:onClick="NuevaOpinion"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/imageView"
+                                    android:layout_width="75sp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@android:drawable/ic_input_add" />
+
+                                <TextView
+                                    android:id="@+id/txtViewNuevaOpinion"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center|start"
+                                    android:text="@string/NuevaOpinion"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyNuevaOpinion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="visible">
+
+                                <TextView
+                                    android:id="@+id/textView2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/Calificacion"
+                                    android:textStyle="bold|italic" />
+
+                                <RatingBar
+                                    android:id="@+id/rtbEstrellas"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:backgroundTint="#FFC107"
+                                    android:numStars="5"
+                                    android:rating="0"
+                                    android:stepSize="1" />
+
+                                <EditText
+                                    android:id="@+id/txtComentarioHospedaje"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:ems="10"
+                                    android:gravity="start|top"
+                                    android:hint="@string/Comentario"
+                                    android:inputType="textMultiLine" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageButton
+                                        android:id="@+id/btnGuardarOpinion"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="#4CAF50"
+                                        app:srcCompat="@android:drawable/ic_menu_send" />
+
+                                    <ImageButton
+                                        android:id="@+id/btnCancelarOpinion"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="#F44336"
+                                        android:onClick="CancelarOpinion"
+                                        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/cardOpinion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                app:cardBackgroundColor="#F257AC"
+                                app:cardCornerRadius="20dp">
+
+                                <LinearLayout
+                                    android:id="@+id/lyOpinion"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/txtUsuarioOpinion"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Nestor Chela"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <RatingBar
+                                        android:id="@+id/rtbOpinion"
+                                        style="@style/Widget.AppCompat.RatingBar.Indicator"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="false"
+                                        android:numStars="5"
+                                        android:rating="4"
+                                        android:stepSize="1" />
+
+                                    <TextView
+                                        android:id="@+id/txvComentarioHospedaje"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Excelente servicio totalmente recomendado"
+                                        android:textSize="15sp"
+                                        android:textStyle="italic" />
+
+                                    <LinearLayout
+                                        android:id="@+id/lyBotonesOpinion"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <ImageButton
+                                            android:id="@+id/btnEditarOpinion"
+                                            android:layout_width="10dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="25dp"
+                                            android:layout_marginRight="25dp"
+                                            android:layout_weight="0.25"
+                                            android:backgroundTint="#FFEE58"
+                                            app:srcCompat="@android:drawable/ic_menu_edit" />
+
+                                        <ImageButton
+                                            android:id="@+id/btnBorrarOpinion"
+                                            android:layout_width="10dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="25dp"
+                                            android:layout_marginRight="25dp"
+                                            android:layout_weight="0.25"
+                                            android:backgroundTint="#EF5350"
+                                            app:srcCompat="@android:drawable/ic_menu_delete" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
